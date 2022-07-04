@@ -11,4 +11,4 @@ for word in entered_list:
     if word in count_list:
         count_list.pop(count_list.index(word))
 
-count_stop = count_start - (len(count_list))
+
