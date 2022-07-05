@@ -1,14 +1,24 @@
-with open("sample_string.txt") as file:
-    data = file.readline()
+def open_file():
+    with open("sample_string.txt") as file:
+        data = file.readline()
+        string_list = list(data)
+        return string_list
 
-count_list = data.split(" ")
-count_start = (len(count_list))
+
+WORD_COUNT = 1
+
 given_text = input("gimme text")
+entered_list = list(given_text)
 
-entered_list = given_text.split(" ")
+word = 0
+for _ in range(len(entered_list)):
+    if string_list[word] == entered_list[word]:
+        if entered_list[word] == " ":
+            WORD_COUNT += 1
+    elif string_list[word] != entered_list[word]:
+        print("wrong")
+    else:
+        print("check")
 
-for word in entered_list:
-    if word in count_list:
-        count_list.pop(count_list.index(word))
-
-
+    word += 1
+print(WORD_COUNT)
